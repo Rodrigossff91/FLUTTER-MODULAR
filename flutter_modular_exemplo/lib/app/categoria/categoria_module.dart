@@ -1,9 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_modular_exemplo/app/categoria/categoria_module.dart';
+import 'package:flutter_modular_exemplo/app/categoria/categoria_page.dart';
 import 'package:flutter_modular_exemplo/app/produto/produto_module.dart';
-import 'package:flutter_modular_exemplo/app/splash/splash_page.dart';
 
-class AppModule extends Module {
+class CategoriaModule extends Module {
   @override
   List<Bind> get binds => [];
 
@@ -11,9 +10,8 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           Modular.initialRoute,
-          child: (context, args) => const SplashPage(),
+          child: (context, args) => CategoriaPage(categoria: args.data),
         ),
-        ModuleRoute('/categoria', module: CategoriaModule()),
         ModuleRoute('/produto', module: ProdutoModule())
       ];
 }
