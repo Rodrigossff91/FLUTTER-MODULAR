@@ -6,5 +6,6 @@ class CategoriaController {
     required this.precoModel,
   }) {
     print('CATEGORIA CONTROLLER${hashCode}');
+    print('CATEGORIA CONTROLLER${precoModel.hashCode}');
   }
 }

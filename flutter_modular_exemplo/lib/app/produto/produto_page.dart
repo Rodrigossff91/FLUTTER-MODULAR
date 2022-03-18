@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_modular_exemplo/app/categoria/modelo/preco_model.dart';
 
 class ProdutoPage extends StatefulWidget {
   final String? nome;
@@ -21,7 +23,12 @@ class _ProdutoPageState extends State<ProdutoPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //  Text(Modular.args.params["nome"] ?? "aaa")
-            Text(widget.nome ?? "aaa")
+            Text(widget.nome ?? "aaa"),
+            TextButton(
+                onPressed: () {
+                  Modular.get<PrecoModel>();
+                },
+                child: const Text("Get preço"))
           ],
         ),
       ),

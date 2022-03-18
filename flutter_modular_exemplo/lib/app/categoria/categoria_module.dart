@@ -4,10 +4,13 @@ import 'package:flutter_modular_exemplo/app/categoria/modelo/categoria_controlle
 import 'package:flutter_modular_exemplo/app/categoria/modelo/preco_model.dart';
 import 'package:flutter_modular_exemplo/app/produto/produto_module.dart';
 
+import 'modelo/x.dart';
+
 class CategoriaModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind.lazySingleton((i) => PrecoModel()),
+        Bind.lazySingleton((i) => X(), export: true),
+        Bind.lazySingleton((i) => PrecoModel(x: i()), export: true),
         Bind.lazySingleton(((i) => CategoriaController(precoModel: i())))
       ];
 
