@@ -15,7 +15,8 @@ class CategoriaPage extends StatefulWidget {
   State<CategoriaPage> createState() => _CategoriaPageState();
 }
 
-class _CategoriaPageState extends State<CategoriaPage> {
+class _CategoriaPageState
+    extends ModularState<CategoriaPage, CategoriaController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +30,7 @@ class _CategoriaPageState extends State<CategoriaPage> {
               Center(
                 child: Text(widget.categoria ?? ""),
               ),
-              TextButton(
-                  onPressed: () {
-                    var controller = Modular.get<CategoriaController>();
-                  },
-                  child: const Text("Get Controller"))
+              TextButton(onPressed: () {}, child: const Text("Get Controller"))
             ],
           ),
         ));
